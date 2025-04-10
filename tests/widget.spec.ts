@@ -34,4 +34,9 @@ test.describe('Uchi.ru widget ', () => {
 
     expect(await widgetPage.getTitle()).toEqual('База знаний Учи.ру');
   });
+  test('Кнопка "Зарегистрироваться" должна отображаться на странице', async () => {
+    await widgetPage.openWidget();
+        const registerButton = await widgetPage.getRegisterButton();
+        await expect(registerButton).toBeVisible();
+    });
 });

@@ -9,6 +9,8 @@ enum WidgetPageSelectors {
     ARTICLE_POPULAR_TITLE = '[class^=popularTitle__]',
     ARTICLE_POPULAR_LIST = `${ARTICLE_POPULAR_TITLE} + ul[class^=articles__]`,
     ARTICLE_POPULAR_LIST_ITEM = `${ARTICLE_POPULAR_LIST} > li`,
+
+    REGISTER_BUTTON = 'a:has-text("Зарегистрироваться")',
 }
 
 export class WidgetPage {
@@ -39,5 +41,10 @@ export class WidgetPage {
     getWidgetBody() {
         return this.page.locator(WidgetPage.selector.WIDGET_BODY);
     }
+    async getRegisterButton() {
+        return this.page.locator(WidgetPage.selector.REGISTER_BUTTON);
+    }
 }
+
+
 
